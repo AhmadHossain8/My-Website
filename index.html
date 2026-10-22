@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmad Hossain — Software Engineer &amp; Prospective PhD Researcher</title>
-<meta name="description" content="Ahmad Hossain — software engineer exploring retrieval-augmented generation and information retrieval, looking toward PhD research in reliable, efficient LLM systems.">
+<meta name="description" content="Ahmad Hossain — software engineer working on retrieval-augmented generation and the security of LLM agents, looking toward PhD research in reliable, secure LLM systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -254,10 +254,12 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <div>
       <h1>Ahmad Hossain</h1>
       <p class="hero-role">Software Engineer<span class="sep">|</span>Prospective PhD Researcher</p>
-      <p class="hero-summary">I work on retrieval-augmented generation and information retrieval, with a focus on making LLM-based systems more reliable and efficient. I'm based in Dhaka, Bangladesh, and I'm seeking PhD positions in these areas.</p>
+      <p class="hero-summary">I work on retrieval-augmented generation and information retrieval, and I'm increasingly focused on the security of LLM agents, especially prompt injection through the content they retrieve and the tools they call. I'm based in Dhaka, Bangladesh, and I'm seeking PhD positions in these areas.</p>
       <ul class="interests" aria-label="Research interests">
         <li>Retrieval-Augmented Generation</li>
         <li>Information Retrieval</li>
+        <li>LLM Agent Security</li>
+        <li>Prompt Injection</li>
         <li>Efficient LLM Systems</li>
         <li>Low-Resource NLP</li>
       </ul>
@@ -280,14 +282,27 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <div class="wrap">
     <h2>Research Interests</h2>
     <div class="content">
-      <p>My research interest is <strong>retrieval-augmented generation (RAG) and information retrieval</strong>, with a focus on making LLM-based systems more reliable and efficient. Some questions I want to study:</p>
-      <ul class="bullets">
-        <li><strong>Retrieval and answer quality:</strong> how choices like chunking, embedding model, and top-k affect the correctness of generated answers, and how to measure this beyond end-to-end accuracy.</li>
-        <li><strong>Failure diagnosis:</strong> whether a wrong answer in a multi-stage pipeline came from retrieval, context construction, or generation.</li>
-        <li><strong>Efficiency:</strong> lowering the latency and cost of RAG systems through better pipeline design, distillation, and weight averaging, without losing answer quality.</li>
-        <li><strong>Low-resource languages:</strong> semantic retrieval for languages such as Bangla, where basic tools (such as stemmers) and evaluation data are limited.</li>
-      </ul>
-      <p>These questions come from problems I've worked on directly: building and debugging production RAG pipelines at Talent Pro, a co-authored journal paper on model compression, and a Bangla semantic retrieval project supervised by Dr. Nabeel Mohammed.</p>
+      <p>I work on two connected problems in LLM systems: getting the right information to the model, and keeping it safe when that information can't be trusted.</p>
+
+      <div class="sub-project">
+        <h4>Retrieval-augmented generation</h4>
+        <ul class="bullets">
+          <li><strong>Answer quality:</strong> how chunking, embeddings, and top-k affect correctness, and which stage caused a wrong answer.</li>
+          <li><strong>Efficiency:</strong> cutting latency and cost through pipeline design, distillation, and weight averaging.</li>
+          <li><strong>Low-resource languages:</strong> semantic retrieval for Bangla, where tools and evaluation data are scarce.</li>
+        </ul>
+      </div>
+
+      <div class="sub-project">
+        <h4>Security of LLM agents</h4>
+        <ul class="bullets">
+          <li><strong>Prompt injection:</strong> secure-by-design defenses (e.g., information-flow control, CaMeL) that hold even when the model is fooled.</li>
+          <li><strong>Tools and data:</strong> MCP tool poisoning, least-privilege permissions, and poisoned RAG corpora or agent memory.</li>
+          <li><strong>Evaluation:</strong> how robust guardrails really are against adaptive attacks, and what benchmarks like AgentDojo miss.</li>
+        </ul>
+      </div>
+
+      <p>Building RAG pipelines for Conversa AI at Talent Pro, an assistant that answers from scraped web content and takes actions, made me ask what happens when retrieved content contains instructions instead of facts.</p>
     </div>
   </div>
 </section>
@@ -323,11 +338,13 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <div class="content">
       <div class="entry">
         <h3 class="pub-title">Skin Cancer Detection using Lightweight Model Souping and Ensembling Knowledge Distillation for Memory-Constrained Devices</h3>
-        <p class="pub-venue"><span class="badge">Journal</span><em>Intelligence-Based Medicine</em>, Elsevier, 2024 &middot; Co-author</p>
+        <p class="pub-venue">M. R. Kabir, R. H. Borshon, M. K. Wasi, R. M. Sultan, <strong>A. Hossain</strong>, R. Khan</p>
+        <p class="pub-venue"><span class="badge">Journal</span><em>Intelligence-Based Medicine</em>, vol. 10, 100176, Elsevier, 2024</p>
         <ul class="bullets">
-          <li><strong>Distilled</strong> ResNet50 and DenseNet161 teacher models (98.32% and 98.80% accuracy) into a 0.35M-parameter student — 73–82&times; fewer parameters.</li>
-          <li><strong>Compared</strong> multi-teacher knowledge distillation, output ensembling, and greedy model soup for skin cancer classification; the best ensemble reached 88.00% accuracy (about 1.05M parameters).</li>
-          <li><strong>My contribution:</strong> implemented and ran the greedy model soup experiments.</li>
+          <li><strong>Distilled</strong> ResNet50 and DenseNet161 teacher models (98.32% and 98.80% accuracy on HAM10000) into a 0.35M-parameter student, TinyStudent, with 73–82&times; fewer parameters. The single-teacher students reached 85.45% and 85.00%; distilling from both teachers at once gave 84.10%.</li>
+          <li><strong>Compared</strong> output ensembling and greedy model soup over the three students. Concatenation ensembling reached 88.00% (about 1.05M parameters); greedy soup reached 85.70% while keeping a single 0.35M model at inference.</li>
+          <li><strong>Deployed</strong> the student model in a Django web app to show it runs on low-memory devices.</li>
+          <li><strong>My contribution</strong> (CRediT: methodology, validation, visualization): implemented and ran the greedy model soup experiments.</li>
         </ul>
         <div class="entry-links">
           <a href="https://www.sciencedirect.com/science/article/pii/S2666521224000437" target="_blank" rel="noopener">Paper</a>
@@ -352,8 +369,9 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <ul class="bullets">
           <li>Built a plagiarism detection system for Bangla that finds reworded text through sentence-level semantic similarity instead of exact string matching: sentences are encoded with Bangla-BERT, stored in a vector database, and matched against the query document.</li>
           <li>Designed the text preprocessing pipeline (removing punctuation, digits, stop words, extra spaces, and non-Bangla sentences) and compared four preprocessing variants by their effect on similarity scores for paraphrased sentences. Stemming gave the highest scores but was unreliable because Bangla stemming tools are limited, so punctuation removal without stemming was chosen as the safer default.</li>
-          <li>Generated sentence embeddings from the Bangla2B+ corpus (27&nbsp;GB) in batches of about 200,000 sentences under limited GPU resources, and compared Milvus (HNSW, IVF_FLAT) and Qdrant on insertion, indexing, and search time.</li>
-          <li>On hand-built paraphrase examples, similarity was above 0.90 for light rewording, 0.80–0.90 for moderate, and 0.60–0.80 for heavy paraphrasing.</li>
+          <li>Embedded the Bangla2B+ corpus (27&nbsp;GB, about 138M sentences) in 40&nbsp;MB chunks of about 200,000 sentences, each taking about an hour on Colab. Embedding the full corpus would take an estimated 691 GPU-hours, so the prototype indexed a subset.</li>
+          <li>Compared Milvus (HNSW, IVF_FLAT) and Qdrant on insertion, indexing, and search time. Milvus was faster (about 3.3&nbsp;s vs. 8.0&nbsp;s to insert 1,000 vectors) but couldn't store Bangla text, so the system switched to Qdrant.</li>
+          <li>On hand-built paraphrase examples, similarity was above 0.90 for light rewording, 0.80–0.90 for moderate, and 0.60–0.80 for heavy paraphrasing. Splitting one sentence into several shorter ones gave 0.57–0.85, so this kind of rewording is harder to catch at the sentence level.</li>
           <li><strong>My role (team of four):</strong> preprocessing pipeline and comparison; BERT embedding and Qdrant retrieval layer.</li>
         </ul>
         <p class="tech"><span>Django</span><span>Bangla-BERT</span><span>Qdrant</span><span>Milvus</span></p>
@@ -367,10 +385,11 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
           <h3 class="entry-title">Parameter Averaging and Model Ensembling for Food Image Classification</h3>
           <span class="entry-date">Fall 2022</span>
         </div>
-        <p class="entry-sub">Course Project, Pattern Recognition and Neural Networks (CSE 465), North South University</p>
+        <p class="entry-sub">Course Project, Pattern Recognition and Neural Networks (CSE 465), North South University &middot; Unpublished manuscript with M. K. Wasi, S. U. R. Shaikh, and R. H. Borshon</p>
         <ul class="bullets">
           <li>Compared weight averaging during training (averaging each epoch's weights with the best earlier checkpoint) and six ensembling methods on Food-11 using AlexNet, InceptionV3, ResNet50, and VGG16 — 74 experiments over 4 single models and all 11 combinations.</li>
           <li>Weight averaging improved 3 of 4 single models (ResNet50 dropped slightly). The best result, 95.24%, came from output-averaging weight-averaged InceptionV3, ResNet50, and VGG16.</li>
+          <li>Ensembles built from weight-averaged models beat their regular counterparts in 8 of 11 combinations. Most differences were under one percentage point and came from single runs, so the result points in a direction but doesn't settle it.</li>
           <li><strong>My role (team of four):</strong> built the ResNet50 and VGG16 ensembles and the averaging comparisons.</li>
         </ul>
         <p class="tech"><span>PyTorch</span><span>AlexNet</span><span>InceptionV3</span><span>ResNet50</span><span>VGG16</span></p>
@@ -467,7 +486,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <div class="wrap">
     <h2>Contact</h2>
     <div class="content">
-      <p>I'm exploring PhD opportunities in RAG, information retrieval, and reliable LLM systems. I'm happy to talk even if your group's focus is a bit different from what's on this page, and I usually reply within 24 hours.</p>
+      <p>I'm exploring PhD opportunities in RAG, information retrieval, and the security of LLM agents. I'm happy to talk even if your group's focus is a bit different from what's on this page, and I usually reply within 24 hours.</p>
       <p><a class="contact-email" href="mailto:ahmadhossain1458@gmail.com">ahmadhossain1458@gmail.com</a></p>
       <div class="links">
         <a class="btn" href="https://scholar.google.com/citations?user=9WxXFlsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
