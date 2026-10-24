@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmad Hossain — Software Engineer &amp; Prospective PhD Researcher</title>
-<meta name="description" content="Ahmad Hossain — software engineer working on retrieval-augmented generation and the security of LLM agents, looking toward PhD research in reliable, secure LLM systems.">
+<meta name="description" content="Ahmad Hossain — software engineer seeking PhD positions in the security of LLM systems: prompt injection, retrieval poisoning, and multilingual robustness of RAG assistants and tool-using agents.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -232,8 +232,8 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#education">Education</a></li>
-          <li><a href="#publications">Publications</a></li>
           <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#work">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -254,14 +254,14 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <div>
       <h1>Ahmad Hossain</h1>
       <p class="hero-role">Software Engineer<span class="sep">|</span>Prospective PhD Researcher</p>
-      <p class="hero-summary">I work on retrieval-augmented generation and information retrieval, and I'm increasingly focused on the security of LLM agents, especially prompt injection through the content they retrieve and the tools they call. I'm based in Dhaka, Bangladesh, and I'm seeking PhD positions in these areas.</p>
+      <p class="hero-summary">I'm interested in the security of LLM systems that act on retrieved content: making RAG assistants and tool-using agents reliable when that content is wrong, and secure when an attacker wrote it. I'm based in Dhaka, Bangladesh, and I'm seeking PhD positions in this area.</p>
       <ul class="interests" aria-label="Research interests">
-        <li>Retrieval-Augmented Generation</li>
-        <li>Information Retrieval</li>
-        <li>LLM Agent Security</li>
+        <li>LLM Security</li>
         <li>Prompt Injection</li>
-        <li>Efficient LLM Systems</li>
-        <li>Low-Resource NLP</li>
+        <li>Retrieval Poisoning</li>
+        <li>Tool-Using Agents</li>
+        <li>Retrieval-Augmented Generation</li>
+        <li>Multilingual Robustness</li>
       </ul>
       <div class="links">
         <a class="btn primary" href="mailto:ahmadhossain1458@gmail.com">
@@ -282,27 +282,12 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <div class="wrap">
     <h2>Research Interests</h2>
     <div class="content">
-      <p>I work on two connected problems in LLM systems: getting the right information to the model, and keeping it safe when that information can't be trusted.</p>
-
-      <div class="sub-project">
-        <h4>Retrieval-augmented generation</h4>
-        <ul class="bullets">
-          <li><strong>Answer quality:</strong> how chunking, embeddings, and top-k affect correctness, and which stage caused a wrong answer.</li>
-          <li><strong>Efficiency:</strong> cutting latency and cost through pipeline design, distillation, and weight averaging.</li>
-          <li><strong>Low-resource languages:</strong> semantic retrieval for Bangla, where tools and evaluation data are scarce.</li>
-        </ul>
-      </div>
-
-      <div class="sub-project">
-        <h4>Security of LLM agents</h4>
-        <ul class="bullets">
-          <li><strong>Prompt injection:</strong> secure-by-design defenses (e.g., information-flow control, CaMeL) that hold even when the model is fooled.</li>
-          <li><strong>Tools and data:</strong> MCP tool poisoning, least-privilege permissions, and poisoned RAG corpora or agent memory.</li>
-          <li><strong>Evaluation:</strong> how robust guardrails really are against adaptive attacks, and what benchmarks like AgentDojo miss.</li>
-        </ul>
-      </div>
-
-      <p>Building RAG pipelines for Conversa AI at Talent Pro, an assistant that answers from scraped web content and takes actions, made me ask what happens when retrieved content contains instructions instead of facts.</p>
+      <p>The <strong>security of LLM systems that act on retrieved content</strong>: making RAG assistants and tool-using agents reliable when that content is wrong, and secure when an attacker wrote it.</p>
+      <ul class="bullets">
+        <li><strong>Prompt injection and retrieval poisoning:</strong> how often untrusted content (scraped pages, retrieved documents, tool outputs and MCP tool descriptions, agent memory) changes what an agent does, and what defenses such as detection, isolation, and least-privilege tool access cost in task utility.</li>
+        <li><strong>Multilingual robustness:</strong> whether prompt injection detectors and guardrails built mostly for English hold up on Bangla and code-mixed Banglish text.</li>
+      </ul>
+      <p>These questions come from building <a href="#work">Conversa AI</a>, a production assistant that answers from scraped web content and takes actions such as lead capture and handover to a person.</p>
     </div>
   </div>
 </section>
@@ -318,7 +303,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
           <span class="entry-date">Sep 2019 – Dec 2023</span>
         </div>
         <p class="entry-sub">North South University, Dhaka, Bangladesh &middot; CGPA 3.33 / 4.00</p>
-        <p class="entry-body" style="font-size:0.95rem"><strong>Selected coursework:</strong> Data Structures and Algorithms, Design and Analysis of Algorithms, Theory of Computation, Discrete Mathematics, Linear Algebra, Probability and Statistics, Database Management Systems, Microprocessor Interfacing and Embedded Systems.</p>
+        <p class="entry-body" style="font-size:0.95rem"><strong>Selected coursework (all A or A&minus;):</strong> Data Structures and Algorithms, Design and Analysis of Algorithms, Theory of Computation, Discrete Mathematics, Linear Algebra, Probability and Statistics, Database Management Systems, Software Quality Assurance and Testing.</p>
       </div>
       <div class="entry">
         <div class="entry-head">
@@ -331,34 +316,10 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   </div>
 </section>
 
-<!-- ━━━ PUBLICATIONS ━━━ -->
-<section class="section" id="publications">
-  <div class="wrap">
-    <h2>Publications</h2>
-    <div class="content">
-      <div class="entry">
-        <h3 class="pub-title">Skin Cancer Detection using Lightweight Model Souping and Ensembling Knowledge Distillation for Memory-Constrained Devices</h3>
-        <p class="pub-venue">M. R. Kabir, R. H. Borshon, M. K. Wasi, R. M. Sultan, <strong>A. Hossain</strong>, R. Khan</p>
-        <p class="pub-venue"><span class="badge">Journal</span><em>Intelligence-Based Medicine</em>, vol. 10, 100176, Elsevier, 2024</p>
-        <ul class="bullets">
-          <li><strong>Distilled</strong> ResNet50 and DenseNet161 teacher models (98.32% and 98.80% accuracy on HAM10000) into a 0.35M-parameter student, TinyStudent, with 73–82&times; fewer parameters. The single-teacher students reached 85.45% and 85.00%; distilling from both teachers at once gave 84.10%.</li>
-          <li><strong>Compared</strong> output ensembling and greedy model soup over the three students. Concatenation ensembling reached 88.00% (about 1.05M parameters); greedy soup reached 85.70% while keeping a single 0.35M model at inference.</li>
-          <li><strong>Deployed</strong> the student model in a Django web app to show it runs on low-memory devices.</li>
-          <li><strong>My contribution</strong> (CRediT: methodology, validation, visualization): implemented and ran the greedy model soup experiments.</li>
-        </ul>
-        <div class="entry-links">
-          <a href="https://www.sciencedirect.com/science/article/pii/S2666521224000437" target="_blank" rel="noopener">Paper</a>
-          <a href="https://doi.org/10.1016/j.ibmed.2024.100176" target="_blank" rel="noopener">DOI: 10.1016/j.ibmed.2024.100176</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ━━━ RESEARCH EXPERIENCE ━━━ -->
 <section class="section" id="research">
   <div class="wrap">
-    <h2>Research Experience</h2>
+    <h2>Research Projects</h2>
     <div class="content">
       <div class="entry">
         <div class="entry-head">
@@ -371,8 +332,8 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
           <li>Designed the text preprocessing pipeline (removing punctuation, digits, stop words, extra spaces, and non-Bangla sentences) and compared four preprocessing variants by their effect on similarity scores for paraphrased sentences. Stemming gave the highest scores but was unreliable because Bangla stemming tools are limited, so punctuation removal without stemming was chosen as the safer default.</li>
           <li>Embedded the Bangla2B+ corpus (27&nbsp;GB, about 138M sentences) in 40&nbsp;MB chunks of about 200,000 sentences, each taking about an hour on Colab. Embedding the full corpus would take an estimated 691 GPU-hours, so the prototype indexed a subset.</li>
           <li>Compared Milvus (HNSW, IVF_FLAT) and Qdrant on insertion, indexing, and search time. Milvus was faster (about 3.3&nbsp;s vs. 8.0&nbsp;s to insert 1,000 vectors) but couldn't store Bangla text, so the system switched to Qdrant.</li>
-          <li>On hand-built paraphrase examples, similarity was above 0.90 for light rewording, 0.80–0.90 for moderate, and 0.60–0.80 for heavy paraphrasing. Splitting one sentence into several shorter ones gave 0.57–0.85, so this kind of rewording is harder to catch at the sentence level.</li>
-          <li><strong>My role (team of four):</strong> preprocessing pipeline and comparison; BERT embedding and Qdrant retrieval layer.</li>
+          <li>On hand-built paraphrase examples, similarity stayed above 0.90 for light rewording but fell to 0.60–0.80 for heavy paraphrasing, below the system's 0.80 plagiarism threshold, so heavy rewording can evade detection. Splitting one sentence into several shorter ones gave 0.57–0.85, so this kind of rewording is harder to catch at the sentence level.</li>
+          <li><strong>My role (team of four):</strong> preprocessing, BERT embedding, and the Qdrant retrieval layer.</li>
         </ul>
         <p class="tech"><span>Django</span><span>Bangla-BERT</span><span>Qdrant</span><span>Milvus</span></p>
         <div class="entry-links">
@@ -401,6 +362,30 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   </div>
 </section>
 
+<!-- ━━━ PUBLICATIONS ━━━ -->
+<section class="section" id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <div class="content">
+      <div class="entry">
+        <h3 class="pub-title">Skin Cancer Detection using Lightweight Model Souping and Ensembling Knowledge Distillation for Memory-Constrained Devices</h3>
+        <p class="pub-venue">M. R. Kabir, R. H. Borshon, M. K. Wasi, R. M. Sultan, <strong>A. Hossain</strong>, R. Khan</p>
+        <p class="pub-venue"><span class="badge">Journal</span><em>Intelligence-Based Medicine</em>, vol. 10, 100176, Elsevier, 2024</p>
+        <ul class="bullets">
+          <li><strong>Distilled</strong> ResNet50 and DenseNet161 teacher models (98.32% and 98.80% accuracy on HAM10000) into a 0.35M-parameter student, TinyStudent, with 73–82&times; fewer parameters. The single-teacher students reached 85.45% and 85.00%; distilling from both teachers at once gave 84.10%.</li>
+          <li><strong>Compared</strong> output ensembling and greedy model soup over the three students. Concatenation ensembling reached 88.00% (about 1.05M parameters); greedy soup reached 85.70% while keeping a single 0.35M model at inference.</li>
+          <li><strong>Deployed</strong> the student model in a Django web app to show it runs on low-memory devices.</li>
+          <li><strong>My contribution</strong> (CRediT: methodology, validation, visualization): implemented the greedy model soup experiments. The soup kept only one of the three students, because adding the others lowered validation accuracy.</li>
+        </ul>
+        <div class="entry-links">
+          <a href="https://www.sciencedirect.com/science/article/pii/S2666521224000437" target="_blank" rel="noopener">Paper</a>
+          <a href="https://doi.org/10.1016/j.ibmed.2024.100176" target="_blank" rel="noopener">DOI: 10.1016/j.ibmed.2024.100176</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ━━━ PROFESSIONAL EXPERIENCE ━━━ -->
 <section class="section" id="work">
   <div class="wrap">
@@ -415,13 +400,13 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 
         <div class="sub-project">
           <h4>Conversa AI</h4>
-          <p class="note"><a href="https://conversaai.io" target="_blank" rel="noopener noreferrer">conversaai.io</a> &middot; Production conversational AI platform used by business clients</p>
+          <p class="note"><a href="https://conversaai.io" target="_blank" rel="noopener noreferrer">conversaai.io</a> &middot; Production assistant that answers from client web content and takes actions</p>
           <ul class="bullets">
-            <li>Reduced end-to-end latency of a multi-stage LLM pipeline from about 13s to 6s by running independent retrieval, embedding, and model calls concurrently instead of one after another, using an asyncio event loop with a thread pool for blocking calls.</li>
-            <li>Built and maintain a retrieval pipeline over a ChromaDB vector store; tuned chunk size and top-k using measured retrieval results.</li>
-            <li>Designed data ingestion and task-queue services (Redis, RabbitMQ, Docker) for web scraping and long-running background jobs.</li>
-            <li>Built role-based context management, automated lead collection, and a human handover workflow that passes a conversation to a person when the AI cannot handle it.</li>
+            <li>Built and maintain the retrieval pipeline: client web content is scraped, chunked, and stored in a ChromaDB vector store; tuned chunk size and top-k using measured retrieval results.</li>
+            <li>Built automated lead collection, role-based context management, and a human handover workflow that passes a conversation to a person when the AI cannot handle it.</li>
             <li>Trace incorrect production outputs back to the pipeline stage that caused them; added Sentry error monitoring.</li>
+            <li>Cut end-to-end latency from about 13s to 6s by running independent retrieval, embedding, and model calls concurrently (asyncio with a thread pool for blocking calls).</li>
+            <li>Designed ingestion and task-queue services (Redis, RabbitMQ, Docker) for scraping and background jobs.</li>
           </ul>
           <p class="tech"><span>FastAPI</span><span>LangChain</span><span>Redis</span><span>RabbitMQ</span><span>ChromaDB</span><span>Docker</span></p>
         </div>
@@ -457,11 +442,13 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <dt>Programming</dt>
         <dd>Python, C++, Java, SQL</dd>
         <dt>Machine Learning &amp; LLMs</dt>
-        <dd>PyTorch, HuggingFace Transformers, BERT, LangChain, LangGraph, OpenAI API, Knowledge Distillation, Model Averaging &amp; Ensembling</dd>
+        <dd>PyTorch, HuggingFace Transformers, BERT, LangChain, LangGraph, OpenAI API, Knowledge Distillation, Weight Averaging, Ensembling</dd>
         <dt>Retrieval &amp; Data</dt>
         <dd>Qdrant, ChromaDB, Milvus, PostgreSQL, MySQL, Redis</dd>
         <dt>Backend &amp; Systems</dt>
         <dd>FastAPI, Django, REST API Design, RabbitMQ, Async &amp; Concurrent Pipelines, Docker, Linux, Git, Sentry</dd>
+        <dt>Languages</dt>
+        <dd>Bangla (native); English (all university coursework taught in English)</dd>
       </dl>
     </div>
   </div>
@@ -474,7 +461,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <div class="content">
       <ul class="honors">
         <li><span class="yr">2024</span><span class="what"><strong>Perfect Attendance Award</strong>, B-JET Programme (14th Batch)</span></li>
-        <li><span class="yr">2023</span><span class="what"><strong>196th of 2,460 teams</strong>, ICPC Asia Dhaka Regional</span></li>
+        <li><span class="yr">2023</span><span class="what"><strong>196th of 2,460 teams</strong>, ICPC Asia Dhaka Regional Preliminary Contest</span></li>
         <li><span class="yr">Ongoing</span><span class="what"><strong>650+ problems solved</strong> across online judges — <a href="https://codeforces.com/profile/Ahmad8" target="_blank" rel="noopener noreferrer">Codeforces</a> (Ahmad8, rating 1216), <a href="https://atcoder.jp/users/A_H_8" target="_blank" rel="noopener noreferrer">AtCoder</a> (A_H_8, 226), <a href="https://vjudge.net/user/A_H_8" target="_blank" rel="noopener noreferrer">Vjudge</a> (A_H_8)</span></li>
       </ul>
     </div>
@@ -486,7 +473,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <div class="wrap">
     <h2>Contact</h2>
     <div class="content">
-      <p>I'm exploring PhD opportunities in RAG, information retrieval, and the security of LLM agents. I'm happy to talk even if your group's focus is a bit different from what's on this page, and I usually reply within 24 hours.</p>
+      <p>I'm exploring PhD opportunities in LLM security, especially prompt injection and retrieval poisoning in RAG assistants and tool-using agents. I'm happy to talk even if your group's focus is a bit different from what's on this page, and I usually reply within 24 hours.</p>
       <p><a class="contact-email" href="mailto:ahmadhossain1458@gmail.com">ahmadhossain1458@gmail.com</a></p>
       <div class="links">
         <a class="btn" href="https://scholar.google.com/citations?user=9WxXFlsAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
